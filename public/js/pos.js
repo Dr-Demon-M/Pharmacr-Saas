@@ -318,15 +318,85 @@ if (popup) {
 
 }
 
-function showProductDetails() {
+function showProductDetails(btn) {
+    const popup = document.getElementById('productDetailsPopup');
+    if (!popup) {
+        return;
+    }
 
-    document
-        .getElementById('productDetailsPopup')
-        .classList.add('show');
+    if (btn) {
+        const row = btn.closest('tr');
+        if (row) {
+            const tds = row.getElementsByTagName('td');
+            if (tds.length >= 8) {
+                // Determine page type by url or headers
+                const isStockPage = window.location.pathname.includes('stock');
+
+                if (isStockPage) {
+                    // Stock Page column mappings:
+                    // 0: Name, 1: Code/SKU, 2: Category, 3: Supplier, 4: Stock, 5: Price, 6: Total Value, 7: Status
+                    const name = tds[0].textContent.trim();
+                    const sku = tds[1].textContent.trim();
+                    const cat = tds[2].textContent.trim();
+                    const supplier = tds[3].textContent.trim();
+                    const stock = tds[4].textContent.trim();
+                    const price = tds[5].textContent.trim();
+                    const totalVal = tds[6].textContent.trim();
+                    const statusSpan = tds[7].querySelector('.status');
+                    const status = statusSpan ? statusSpan.textContent.trim() : tds[7].textContent.trim();
+
+                    const contentDiv = popup.querySelector('.product-popup-content');
+                    if (contentDiv) {
+                        contentDiv.innerHTML = `
+                            <button class="close-btn" onclick="closeProductDetails()">✖</button>
+                            <h2>${name}</h2>
+                            <hr>
+                            <p><strong>SKU:</strong> <span>${sku}</span></p>
+                            <p><strong>Category:</strong> <span>${cat}</span></p>
+                            <p><strong>Supplier:</strong> <span>${supplier}</span></p>
+                            <p><strong>Price:</strong> <span>${price}</span></p>
+                            <p><strong>Current Stock:</strong> <span>${stock} Boxes</span></p>
+                            <p><strong>Total Value:</strong> <span>${totalVal}</span></p>
+                            <p><strong>Status:</strong> <span class="status ${status.toLowerCase().includes('low') ? 'low' : (status.toLowerCase().includes('out') ? 'out' : 'active')}">${status}</span></p>
+                        `;
+                    }
+                } else {
+                    // Products Page column mappings:
+                    // 0: Name, 1: SKU, 2: Category, 3: Unit, 4: Price, 5: Stock, 6: Expiry Date, 7: Status
+                    const name = tds[0].textContent.trim();
+                    const sku = tds[1].textContent.trim();
+                    const cat = tds[2].textContent.trim();
+                    const unit = tds[3].textContent.trim();
+                    const price = tds[4].textContent.trim();
+                    const stock = tds[5].textContent.trim();
+                    const expiry = tds[6].textContent.trim();
+                    const statusSpan = tds[7].querySelector('.status');
+                    const status = statusSpan ? statusSpan.textContent.trim() : tds[7].textContent.trim();
+
+                    const contentDiv = popup.querySelector('.product-popup-content');
+                    if (contentDiv) {
+                        contentDiv.innerHTML = `
+                            <button class="close-btn" onclick="closeProductDetails()">✖</button>
+                            <h2>${name}</h2>
+                            <hr>
+                            <p><strong>SKU:</strong> <span>${sku}</span></p>
+                            <p><strong>Category:</strong> <span>${cat}</span></p>
+                            <p><strong>Unit:</strong> <span>${unit}</span></p>
+                            <p><strong>Price:</strong> <span>${price}</span></p>
+                            <p><strong>Current Stock:</strong> <span>${stock}</span></p>
+                            <p><strong>Expiry Date:</strong> <span>${expiry}</span></p>
+                            <p><strong>Status:</strong> <span class="status ${status.toLowerCase().includes('active') ? 'active' : 'out'}">${status}</span></p>
+                        `;
+                    }
+                }
+            }
+        }
+    }
+
+    popup.classList.add('show');
 }
 
 function closeProductDetails() {
-
     document
         .getElementById('productDetailsPopup')
         .classList.remove('show');
@@ -518,6 +588,78 @@ function editSupplier(button) {
 function deleteSupplier(button) {
     if (confirm('Delete this supplier?')) {
         alert('Supplier Deleted');
+    }
+}
+
+// Dropdown panel toggle logic for Topbar-Right
+document.addEventListener('DOMContentLoaded', function() {
+    const notifBtn = document.getElementById('notifDropdownBtn');
+    const notifPanel = document.getElementById('notifDropdownPanel');
+    const profileBtn = document.getElementById('profileDropdownBtn');
+    const profilePanel = document.getElementById('profileDropdownPanel');
+
+    if (notifBtn && notifPanel) {
+        notifBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = notifPanel.classList.contains('show');
+            closeAllDropdowns();
+            if (!isOpen) {
+                notifPanel.classList.add('show');
+                notifBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+
+    if (profileBtn && profilePanel) {
+        profileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = profilePanel.classList.contains('show');
+            closeAllDropdowns();
+            if (!isOpen) {
+                profilePanel.classList.add('show');
+                profileBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+
+    // Close on click outside
+    document.addEventListener('click', function(e) {
+        closeAllDropdowns();
+    });
+
+    // Prevent closing when clicking inside panels
+    if (notifPanel) {
+        notifPanel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    if (profilePanel) {
+        profilePanel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    function closeAllDropdowns() {
+        if (notifPanel) {
+            notifPanel.classList.remove('show');
+        }
+        if (notifBtn) {
+            notifBtn.setAttribute('aria-expanded', 'false');
+        }
+        if (profilePanel) {
+            profilePanel.classList.remove('show');
+        }
+        if (profileBtn) {
+            profileBtn.setAttribute('aria-expanded', 'false');
+        }
+    }
+});
+
+// Clear notifications badge helper
+function clearNotifDot() {
+    const badge = document.querySelector('.notification-btn .badge');
+    if (badge) {
+        badge.style.display = 'none';
     }
 }
 

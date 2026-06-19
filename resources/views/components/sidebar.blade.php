@@ -86,6 +86,15 @@
             <span class="nav-text">Stock</span>
         </a>
 
+        <a href="{{ route('expire') }}" class="nav-item" data-tooltip="Expired Medicines">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <span class="nav-text">Expiry Alert</span>
+        </a>
+
         <a href="{{ route('reports') }}" class="nav-item" data-tooltip="Reports">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
@@ -99,6 +108,14 @@
                 <circle cx="12" cy="7" r="4" />
             </svg>
             <span class="nav-text">Users</span>
+        </a>
+
+        <a href="{{ route('activity') }}" class="nav-item" data-tooltip="Activity Logs">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span class="nav-text">Activity Logs</span>
         </a>
 
         {{-- <a href="{{ route('settings') }}" class="nav-item" data-tooltip="Settings">

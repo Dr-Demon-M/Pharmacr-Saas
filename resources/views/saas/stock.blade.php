@@ -198,36 +198,25 @@
 
         <!-- Table -->
 
-        <div class="table-card">
-            <div id="productDetailsPopup" class="product-popup">
-
-                <div class="product-popup-content">
-
-                    <button class="close-btn" onclick="closeProductDetails()">
-                        ✖
-                    </button>
-
-                    <h2>Vitamin C 1000mg</h2>
-
-                    <hr>
-
-                    <p><strong>SKU:</strong> VIT1000</p>
-
-                    <p><strong>Category:</strong> Vitamins</p>
-
-                    <p><strong>Price:</strong> 60 EGP</p>
-
-                    <p><strong>Current Stock:</strong> 40 Boxes</p>
-
-                    <p><strong>Sold Quantity:</strong> 320 Boxes</p>
-
-                    <p><strong>Nearly Expiry Date:</strong> 15/07/2027</p>
-
-                    <p><strong>Status:</strong> Low Stock</p>
-
-                </div>
-
+        <!-- Product Details Popup (Outside table-card to prevent z-index/transform overlay constraint) -->
+        <div id="productDetailsPopup" class="product-popup">
+            <div class="product-popup-content">
+                <button class="close-btn" onclick="closeProductDetails()">
+                    ✖
+                </button>
+                <h2>Vitamin C 1000mg</h2>
+                <hr>
+                <p><strong>SKU:</strong> VIT1000</p>
+                <p><strong>Category:</strong> Vitamins</p>
+                <p><strong>Price:</strong> 60 EGP</p>
+                <p><strong>Current Stock:</strong> 40 Boxes</p>
+                <p><strong>Sold Quantity:</strong> 320 Boxes</p>
+                <p><strong>Nearly Expiry Date:</strong> 15/07/2027</p>
+                <p><strong>Status:</strong> Low Stock</p>
             </div>
+        </div>
+
+        <div class="table-card">
             <div class="table-responsive">
                 <table>
 
@@ -265,7 +254,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>
@@ -303,7 +292,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>
@@ -341,7 +330,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>

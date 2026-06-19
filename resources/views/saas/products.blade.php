@@ -279,7 +279,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>
@@ -319,7 +319,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>
@@ -359,7 +359,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <button class="dropdown-item" type="button" onclick="showProductDetails()">
+                                            <button class="dropdown-item" type="button" onclick="showProductDetails(this)">
                                                 <i class="fa-solid fa-eye"></i> Show details
                                             </button>
                                         </li>

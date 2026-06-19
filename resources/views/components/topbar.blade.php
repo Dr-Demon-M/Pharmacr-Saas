@@ -75,18 +75,112 @@
     </div>
 
     <div class="topbar-right">
+        <!-- Live Status / Shift Badge -->
+        <div class="topbar-status-badge d-none d-md-flex" id="topbarStatusBadge">
+            <span class="status-pulse-dot"></span>
+            <span class="status-text">Server Online</span>
+            <span class="status-divider">|</span>
+            <span class="status-shift"><i class="fa-regular fa-clock"></i> Morning Shift</span>
+        </div>
 
-        <button class="notification-btn">
-            🔔
-            <span class="badge">3</span>
+        <!-- Notifications Dropdown -->
+        <div class="notification-wrapper">
+            <button class="notification-btn" id="notifDropdownBtn" aria-label="Notifications" aria-expanded="false">
+                <i class="fa-regular fa-bell"></i>
+                <span class="badge">3</span>
+            </button>
+            <div class="notif-dropdown-panel" id="notifDropdownPanel">
+                <div class="panel-header">
+                    <h5>Notifications</h5>
+                    <a href="javascript:void(0)" class="mark-all-read" id="markAllReadBtn" onclick="showToast('All marked as read'); clearNotifDot()">Mark all read</a>
+                </div>
+                <div class="panel-body">
+                    <div class="notif-item unread" id="notifItem1">
+                        <div class="notif-icon danger">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="notif-content">
+                            <p class="notif-text"><strong>Panadol Extra</strong> (Batch B12) has expired 2 days ago.</p>
+                            <span class="notif-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="notif-item unread" id="notifItem2">
+                        <div class="notif-icon warning">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                        </div>
+                        <div class="notif-content">
+                            <p class="notif-text"><strong>Augmentin 625mg</strong> stock is below reorder level (5 units left).</p>
+                            <span class="notif-time">5 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="notif-item" id="notifItem3">
+                        <div class="notif-icon success">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="notif-content">
+                            <p class="notif-text">Daily sales report sync completed successfully.</p>
+                            <span class="notif-time">Yesterday</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="{{ route('activity') }}" id="viewAllActivityLink">View All Activity Logs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Quick Toggle -->
+        <button class="settings-quick-btn" id="quickSettingsBtn" onclick="showToast('Quick settings panel toggled')" aria-label="Settings">
+            <i class="fa-solid fa-sliders"></i>
         </button>
 
-        <div class="user-info">
-            <div class="avatar">AO</div>
+        <!-- User Profile Dropdown -->
+        <div class="profile-wrapper">
+            <div class="user-info" id="profileDropdownBtn" aria-expanded="false">
+                <div class="avatar">
+                    <span>AO</span>
+                    <span class="avatar-status-dot"></span>
+                </div>
 
-            <div>
-                <h4>Ahmed Omar</h4>
-                <small>Pharmacist</small>
+                <div class="user-details d-none d-sm-flex">
+                    <h4>Ahmed Omar</h4>
+                    <span class="user-role">Lead Pharmacist</span>
+                </div>
+                <i class="fa-solid fa-chevron-down user-chevron d-none d-sm-block"></i>
+            </div>
+            
+            <div class="profile-dropdown-panel" id="profileDropdownPanel">
+                <div class="profile-panel-header">
+                    <div class="panel-avatar">AO</div>
+                    <div class="panel-user-info">
+                        <h5>Ahmed Omar</h5>
+                        <p>ahmed.omar@pharmapro.com</p>
+                        <span class="badge badge-role">Lead Pharmacist</span>
+                    </div>
+                </div>
+                <div class="profile-panel-body">
+                    <a href="javascript:void(0)" class="profile-menu-item" id="profileLink" onclick="showToast('Profile settings clicked')">
+                        <i class="fa-regular fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                    <a href="javascript:void(0)" class="profile-menu-item" id="systemSettingsLink" onclick="showToast('System settings clicked')">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>System Settings</span>
+                    </a>
+                    <a href="javascript:void(0)" class="profile-menu-item" id="switchBranchLink" onclick="showToast('Switch branch clicked')">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Switch Branch</span>
+                    </a>
+                    <a href="javascript:void(0)" class="profile-menu-item" id="helpSupportLink" onclick="showToast('Help center opened')">
+                        <i class="fa-regular fa-circle-question"></i>
+                        <span>Help & Support</span>
+                    </a>
+                    <div class="panel-divider"></div>
+                    <a href="javascript:void(0)" class="profile-menu-item logout-item" id="logoutLink" onclick="showToast('Logging out...')">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Log Out</span>
+                    </a>
+                </div>
             </div>
         </div>
 
