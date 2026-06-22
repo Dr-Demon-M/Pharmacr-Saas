@@ -30,8 +30,8 @@
                                 </button>
                             </div>
                         </td>
-                        <td style="color: #4a5568">125.00</td>
-                        <td><input class="disc-input" type="text" value="0.00" /></td>
+                        <td>125.00</td>
+                        <td><input placeholder="0.00" class="disc-input" type="text" /></td>
                         <td class="total-cell">250.00</td>
                         <td>
                             <button class="remove-btn" onclick="removeRow(this)">
@@ -51,8 +51,8 @@
                                 </button>
                             </div>
                         </td>
-                        <td style="color: #4a5568">30.00</td>
-                        <td><input class="disc-input" type="text" value="0.00" /></td>
+                        <td>30.00</td>
+                        <td><input placeholder="0.00" class="disc-input" type="text" /></td>
                         <td class="total-cell">30.00</td>
                         <td>
                             <button class="remove-btn" onclick="removeRow(this)">
@@ -72,8 +72,8 @@
                                 </button>
                             </div>
                         </td>
-                        <td style="color: #4a5568">35.00</td>
-                        <td><input class="disc-input" type="text" value="0.00" /></td>
+                        <td>35.00</td>
+                        <td><input placeholder="0.00" class="disc-input" type="text" /></td>
                         <td class="total-cell">35.00</td>
                         <td>
                             <button class="remove-btn" onclick="removeRow(this)">
@@ -143,10 +143,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="font-weight: 500; color: #1a202c">INV-000125</td>
+                            <td style="font-weight: 500; ">INV-000125</td>
                             <td>Walk-in Customer</td>
                             <td>10:30 AM</td>
-                            <td style="font-weight: 500; color: #1a202c">EGP 125.00</td>
+                            <td style="font-weight: 500; ">EGP 125.00</td>
                             <td>Cash</td>
                             <td>
                                 <span class="status-badge completed">Completed</span>
@@ -158,10 +158,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 500; color: #1a202c">INV-000124</td>
+                            <td style="font-weight: 500; ">INV-000124</td>
                             <td>Ahmed Mohamed</td>
                             <td>10:15 AM</td>
-                            <td style="font-weight: 500; color: #1a202c">EGP 216.60</td>
+                            <td style="font-weight: 500; ">EGP 216.60</td>
                             <td>Card</td>
                             <td>
                                 <span class="status-badge completed">Completed</span>
@@ -173,10 +173,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 500; color: #1a202c">INV-000123</td>
+                            <td style="font-weight: 500; ">INV-000123</td>
                             <td>Walk-in Customer</td>
                             <td>10:02 AM</td>
-                            <td style="font-weight: 500; color: #1a202c">EGP 360.00</td>
+                            <td style="font-weight: 500; ">EGP 360.00</td>
                             <td>Cash</td>
                             <td>
                                 <span class="status-badge completed">Completed</span>

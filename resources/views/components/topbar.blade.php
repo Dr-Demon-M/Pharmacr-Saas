@@ -75,12 +75,17 @@
     </div>
 
     <div class="topbar-right">
-        <!-- Live Status / Shift Badge -->
-        <div class="topbar-status-badge d-none d-md-flex" id="topbarStatusBadge">
-            <span class="status-pulse-dot"></span>
-            <span class="status-text">Server Online</span>
-            <span class="status-divider">|</span>
-            <span class="status-shift"><i class="fa-regular fa-clock"></i> Morning Shift</span>
+        <!-- Live Clock Badge -->
+        <div class="topbar-clock-badge d-none d-md-flex" id="topbarClockBadge">
+            <span class="clock-date">
+                <i class="fa-regular fa-calendar clock-icon"></i>
+                <span id="topbarDate">--</span>
+            </span>
+            <span class="clock-divider">|</span>
+            <span class="clock-time">
+                <i class="fa-regular fa-clock clock-icon"></i>
+                <span id="topbarTime">--</span>
+            </span>
         </div>
 
         <!-- Notifications Dropdown -->
@@ -129,10 +134,18 @@
             </div>
         </div>
 
-        <!-- Settings Quick Toggle -->
-        <button class="settings-quick-btn" id="quickSettingsBtn" onclick="showToast('Quick settings panel toggled')" aria-label="Settings">
-            <i class="fa-solid fa-sliders"></i>
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
+            <span class="theme-toggle-icon">
+                <i class="fa-solid fa-sun sun-icon"></i>
+                <i class="fa-solid fa-moon moon-icon"></i>
+            </span>
         </button>
+
+        <!-- Settings Quick Toggle -->
+        <a href="{{ route('settings') }}" class="settings-quick-btn" id="quickSettingsBtn" aria-label="Settings" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
+            <i class="fa-solid fa-sliders"></i>
+        </a>
 
         <!-- User Profile Dropdown -->
         <div class="profile-wrapper">
@@ -163,7 +176,7 @@
                         <i class="fa-regular fa-user"></i>
                         <span>My Profile</span>
                     </a>
-                    <a href="javascript:void(0)" class="profile-menu-item" id="systemSettingsLink" onclick="showToast('System settings clicked')">
+                    <a href="{{ route('settings') }}" class="profile-menu-item" id="systemSettingsLink">
                         <i class="fa-solid fa-gear"></i>
                         <span>System Settings</span>
                     </a>

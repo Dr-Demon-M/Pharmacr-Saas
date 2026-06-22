@@ -38,3 +38,6 @@ Route::get('/purchases', function () {
 Route::get('/suppliers', function () {
     return view('saas.suppliers');
 })->name('suppliers');
+Route::get('/settings', function () {
+    return view('saas.settings');
+})->name('settings');

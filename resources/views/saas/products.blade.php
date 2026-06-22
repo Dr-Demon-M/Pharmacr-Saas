@@ -273,7 +273,8 @@
                             </td>
                             <td>
                                 <div class="product-action dropdown">
-                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
 
@@ -289,7 +290,8 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button class="dropdown-item danger" type="button" onclick="clearProductStock(this)">
+                                            <button class="dropdown-item danger" type="button"
+                                                onclick="clearProductStock(this)">
                                                 <i class="fa-solid fa-box-open"></i> Clear stock balance
                                             </button>
                                         </li>
@@ -313,7 +315,8 @@
                             </td>
                             <td>
                                 <div class="product-action dropdown">
-                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
 
@@ -329,7 +332,8 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button class="dropdown-item danger" type="button" onclick="clearProductStock(this)">
+                                            <button class="dropdown-item danger" type="button"
+                                                onclick="clearProductStock(this)">
                                                 <i class="fa-solid fa-box-open"></i> Clear stock balance
                                             </button>
                                         </li>
@@ -353,7 +357,8 @@
                             </td>
                             <td>
                                 <div class="product-action dropdown">
-                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="product-action-btn" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
 
@@ -369,7 +374,8 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button class="dropdown-item danger" type="button" onclick="clearProductStock(this)">
+                                            <button class="dropdown-item danger" type="button"
+                                                onclick="clearProductStock(this)">
                                                 <i class="fa-solid fa-box-open"></i> Clear stock balance
                                             </button>
                                         </li>
